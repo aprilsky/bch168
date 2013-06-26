@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta name="keywords" content="{echo: $header['keywords'];/}" />
+<meta name="description" content="{echo: $header['description'];/}" />
+<base href="{echo: $baseUrl;/}" />
+<link href="/css/css.css" type="text/css" rel="stylesheet" />
+<link href="/css/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="skin/{echo: $SYSINFO['templates'];/}/js/changeStyle.js"></script>
+<title>{echo: $header['title'];/}</title>
+</head>
+<body>
+  {inc: include("shop/index_header.php");/}
+<div class="ifl">
+<div class="iflt">
+{echo:$this_catinfo['cat_name'];/}-{echo:lp{i_shop_filter};/}
+</div>
+   <ul>
+          <li><font color="#FC6512"><b>{echo:lp{i_brand};/}：</b></font></li>
+          	{sta:foreach($brand_list as $value)[loop]}
+          		{sta:if(!empty($value['brand_name'])) [exc]}
+          		{sta:if($brand_id==$value['brand_id']) [exc]}
+	                <li><a class="active" >{echo: $value['brand_name'];/}</a></li>
+	            {sta:}else[exc]}
+	               <li> <a title="{echo: $value['brand_name'];/}" href="{echo:$value['url'];/}">{echo: $value['brand_name'];/}</a></li>
+	            {end:if/}
+	            {end:if/}
+          	{end:foreach/}
+     </ul>
+   <ul>
+  {sta: foreach($attr_info as $key => $value)[loop]}
+		   <li><font color="#FC6512"><b>{echo: $value['attr_name'];/}: </b></font></li>
+	                {sta:if(get_args('attr'.$value['attr_id'])) [exc]}
+	                    <li><a href={echo:preg_replace("/&attr".$value['attr_id']."=([^&]+)/","",$url_this);/}>{echo:lp{i_all};/}</a></li>
+	                {sta:}else[exc]}
+	                    <li> <font class="active">{echo:lp{i_all};/}</font></li>
+	                {end:if/}
+		        {sta: foreach($value['attr_values'] as $k => $v)[loop]}
+		            {sta:if(get_args('attr'.$value['attr_id'])) [exc]}
+		            {sta:$url = preg_replace("/attr".$value['attr_id']."=([^&]+)/","attr".$value['attr_id']."=".urlencode($v),$url_this);/}
+		            {sta:}else [exc]}
+		            {sta:$url = $url_this."&attr".$value['attr_id']."=".urlencode($v);/}
+		            {end:if/}
+		            {sta:if(get_args('attr'.$value['attr_id'])==$v) [exc]}
+		                <li> <a class="active" >{echo: $v;/}</a></li>
+		            {sta:}else[exc]}
+		                <li><a title="{echo: $v;/}" href="{echo:$url;/}">{echo: $v;/}</a></li>
+		            {end:if/}
+	            {end:foreach/}
+	     </ul>
+   <ul>
+    	{end:foreach/}
+         <li><font color="#FC6512"><b>{echo:lp{i_keywords};/}：</b></font></li>
+ <li>{echo:$kk;/}</li>	
+</ul>
+     
+        
+<div class="iflm">
+</div>
+</div>
+
+<div class="imc">
+<div class="iflt2">
+<div class="ifltl" style="padding-left: 9px;">
+<b>{echo:$this_catinfo['cat_name'];/}</b>
+</div>
+<div class="ifltr2">
+
+</div>
+</div>
+<div class="imccl">
+<ul  class="imcc">
+    {sta:foreach($goods_list as $k=>$v)[loop]}
+<li>
+<a target="_blank" href="{echo: goods_url($v['goods_id']);/}"><img onmouseout="hidebox({echo:$v['goods_id'];/})" onmouseover="showbox({echo:$v['goods_id'];/})" src="{echo: $v['is_set_image'] ? $v['goods_thumb'] : 'skin/default/images/nopic.gif';/}"  width="{echo:$SYSINFO['width1'];/}" height="{echo:$SYSINFO['height1'];/}"  alt="{echo:$v['goods_name'];/}"  onerror="this.src='skin/default/images/nopic.gif'"  class="itt"></a><br>
+<a href="{echo: goods_url($v['goods_id']);/}">{echo: sub_str($v['goods_name'],40);/}</a><br>
+￥ <font color=#F11F0E size=6><b>{echo:lp{i_money_sign};/}{echo: $v['goods_price']=='0.00' ? $i_langpackage->i_price_discuss : $v['goods_price'];/}</b></font> 
+<br>
+<img src="/css/sold.jpg" border="0">&nbsp;已售<?php echo rand(31,56); ?>件&nbsp;&nbsp;
+<img src="/css/hit.jpg" border="0">&nbsp;人气<?php echo rand(580,1960); ?><br>
+<a href="{echo: goods_url($v['goods_id']);/}" target="_blank"><img src="/css/gm.jpg" border="0"></a>&nbsp;&nbsp;
+<a href="{echo: goods_url($v['goods_id']);/}" target="_blank"><img src="/css/sc.jpg" border="0"></a><br>
+<img src="/css/rz.jpg" border="0">
+</li>
+      {end:foreach/}
+
+          </ul>
+</div>
+<div class="iflm">
+</div>
+</div>
+
+
+ {inc: require("shop/index_footer.php");/}
+
+</body>
+<div id="contrastbox" style="z-index:999;position:absolute;right:0;border:1px solid #ccc; background:#FFF; display:none; width:188px;">
+	<form action="modules.php?app=contrast" method="post" target="_blank" id="contrastform">
+		<input type="hidden" name="contrast_goods_num" id="contrast_goods_num" value="0" />
+		<input type="hidden" name="contrast_goods_id" id="contrast_goods_id" value="" />
+		<input type="hidden" name="contrast_cid" id="contrast_cid" value="" />
+		<input type="hidden" name="contrast_goods_name" id="contrast_goods_name" value="" />
+		<div style="padding-bottom:12px;">
+  <h2 style="padding:6px 10px;display:block;background:url(skin/default/images/ttlm_01_bg.gif) repeat-x left top;font-size:14px;font-weight:bolder;color:#F77A07;border-bottom:1px solid #ccc">{echo:lp{i_contract_goods};/}</h2> <a onclick="clearItems()" style="float:right; position:relative; top:-23px;right:10px" href="javascript:void(0);">{echo:lp{i_close};/}</a>
+  <div id="contrast_goods_name_show"></div>
+  </div>
+		<!--<input type="submit" name="sub" value="对比" /> -->
+        <a onclick="document.getElementById('contrastform').submit();return false;" href="javascript:;" class="button_4" style=" position:relative;top:25px;display:block;margin-left:100px; width:76px;height:24px;"><img src="skin/default/images/icon_contrast.gif" alt="{echo:lp{i_start_compare};/}"   onerror="this.src='skin/default/images/nopic.gif'"/></a>
+	</form>
+</div>
+<script language="JavaScript" src="servtools/ajax_client/ajax.js"></script>
+<script language="JavaScript">
+function clearItems(){
+	document.getElementById('contrast_goods_id').value ="";
+	document.getElementById('contrast_goods_name').value="";
+	document.getElementById("contrastbox").style.display='none';
+	document.getElementById("contrast_goods_name_show").innerHTML='';
+	document.getElementById('contrast_cid').value = '';
+}
+function delNow(linkitem){
+	linkitem.parentNode.parentNode.removeChild(linkitem.parentNode);
+	}
+function showbox(id) {
+	document.getElementById("showbox_"+id).style.display = '';
+	var showimg = document.getElementById("showimg_"+id);
+	if(showimg.alt=='{echo:lp{i_loading_img};/}') {
+		ajax("do.php?act=goods_get_imgurl","POST","id="+id,function(data){
+			if(data) {
+				showimg.src = data;
+				showimg.alt = '';
+			}
+		});
+	}
+}
+function hidebox(id) {
+	document.getElementById("showbox_"+id).style.display = 'none';
+}
+function addFavorite(id,sid,uid) {
+	if(uid=='0'){
+		alert("{echo: lp{i_g_addfailed};/}");
+		return;
+		}
+	if (sid == uid){
+		alert('{echo:lp{i_mygoods_error};/}');
+	}else {
+		ajax("do.php?act=goods_add_favorite","POST","id="+id,function(data){
+			if(data == 1) {
+				alert("{echo: lp{i_g_addedfavorite};/}");
+			} else if(data == -1) {
+				alert("{echo: lp{i_g_stayfavorite};/}");
+			} else {
+				alert("{echo: lp{i_g_addfailed};/}");
+			}
+		});
+	}
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+var tips; var theTop = 145/*这是默认高度,越大越往下*/;
+var old = theTop;
+function initFloatTips(goodsid,goodsname,action,cid) {
+	tips = document.getElementById('contrastbox');
+	document.getElementById('contrastbox').style.display="";
+	var goods_cid = document.getElementById('contrast_cid').value;
+	if(goods_cid!=''&& goods_cid!=cid&&action==1){
+		alert("{echo:lp{i_compare_error1};/}");
+		return;
+	}else{
+		document.getElementById('contrast_cid').value=cid;
+	}
+	var goods_num = parseInt(document.getElementById('contrast_goods_num').value);
+	var goods_id = document.getElementById('contrast_goods_id').value;
+	var goods_name= document.getElementById('contrast_goods_name').value;
+	var goods_name_show= document.getElementById('contrast_goods_name_show');
+	var goods_id_arr = goods_id.split(",");
+	var goods_name_arr = goods_name.split(",");
+	if(action==1){
+		if(goods_num<5){
+			var same_num=0;
+			for(i=0;i<goods_id_arr.length;i++){
+				if(goods_id_arr[i]==goodsid){
+					same_num++;
+				}
+			}
+			if(same_num>0){
+				alert("{echo:lp{i_compare_error2};/}");
+			}else{
+				document.getElementById('contrast_goods_id').value+=goodsid+",";
+				document.getElementById('contrast_goods_name').value+=goodsname+",";
+				document.getElementById('contrast_goods_num').value=parseInt(goods_num+1);
+			}
+		}else{
+			alert("{echo:lp{i_compare_error3};/}");
+		}
+	}
+	if(action==0){
+		var str="";
+		var namestr="";
+		for(i=0;i<goods_id_arr.length;i++){
+			if(goods_id_arr[i]!=goodsid&&goods_id_arr[i]!=''){
+				str+=goods_id_arr[i]+",";
+				namestr+=goods_name_arr[i]+",";
+			}
+		}
+		document.getElementById('contrast_goods_id').value=str;
+		document.getElementById('contrast_goods_name').value=namestr;
+	}
+
+	var goods_id_arr = document.getElementById('contrast_goods_id').value.split(",");
+	var goods_name_arr = document.getElementById('contrast_goods_name').value.split(",");
+	goods_name_show.innerHTML="";
+	for(i=0;i<goods_id_arr.length-1;i++){
+		goods_name_show.innerHTML+="<li style='padding:8px 0 5px 10px; _padding:8px 0 5px;position:relative;border-bottom:1px solid #f1f1f1;margin-right:10px'>"+"<a href='javascript:;' style='position:absolute;right:0;_right:10px;top:8px;' onclick=\"initFloatTips('"+goods_id_arr[i]+"','"+goods_name_arr[i]+"',0)\">{echo:lp{i_remove};/}</a>" + goods_name_arr[i]+"</li>";
+	}
+	document.getElementById('contrast_goods_num').value=goods_id_arr.length-1;
+	if(document.getElementById('contrast_goods_num').value==0){
+		document.getElementById('contrastbox').style.display="none";
+		document.getElementById('contrast_cid').value="";
+	}
+	moveTips();
+}
+function moveTips() {
+	var tt=55;
+	if (window.innerHeight) {
+		pos = window.pageYOffset
+	}else if (document.documentElement && document.documentElement.scrollTop) {
+		pos = document.documentElement.scrollTop
+	}else if (document.body) {
+		pos = document.body.scrollTop;
+	}
+	pos=pos-tips.offsetTop+theTop;
+	pos=tips.offsetTop+pos/10;
+	if (pos < theTop) {
+		pos = theTop
+	}
+	if (pos != old) {
+		tips.style.top = pos+"px";
+		tt=10;
+	}
+	old = pos;
+	setTimeout(moveTips,tt);
+}
+</script>
+</html>

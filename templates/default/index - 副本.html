@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{echo: $header['title'];/}</title>
+<meta name="keywords" content="{echo: $header['keywords'];/}" />
+<meta name="description" content="{echo: $header['description'];/}" />
+<base href="{echo: $baseUrl;/}" />
+<link href="/css/css.css" type="text/css" rel="stylesheet" />
+<link href="/css/index.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="skin/{echo:$SYSINFO['templates'];/}/js/changeStyle.js"></script>
+<script src="skin/{echo:$SYSINFO['templates'];/}/js/slide.js" type="text/javascript"></script>
+</head>
+<body>
+  {inc: include("shop/index_header.php");/}
+<div class="im">
+<div class="iml">
+<div class="imt">
+宠物推荐
+</div>
+<ul>
+{tag_首页顶部推荐}
+</ul>
+<div class="imf">
+</div>
+</div>
+<div class="imm">
+<script type="text/javascript">
+	var swf_width=476;
+	var swf_height=266;
+	var config='5|0xffffff|0xC22003|80|0xffffff|0xC22003|0x000000';
+	//-- config 参数设置 -- 自动播放时间(秒)|文字颜色|文字背景色|文字背景透明度|按键数字颜色|当前按键颜色|普通按键色彩 --
+	var files='',links='', texts='';
+	files+='|css/ad1.jpg';links+='|/';texts+='|百宠汇';
+	files+='|css/ad2.jpg';links+='|/';texts+='|百宠汇';
+	files+='|css/ad3.jpg';links+='|/';texts+='|百宠汇';
+	files+='|css/ad4.jpg';links+='|/';texts+='|百宠汇';
+	files+='|css/ad5.jpg';links+='|/';texts+='|百宠汇';
+	files=files.substring(1);links=links.substring(1);texts=texts.substring(1);
+	document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ swf_width +'" height="'+ swf_height +'">');
+	document.write('<param name="movie" value="css/focus.swf" />');
+	document.write('<param name="quality" value="high" />');
+	document.write('<param name="menu" value="false" />');
+	document.write('<param name=wmode value="opaque" />');
+	document.write('<param name="FlashVars" value="config='+config+'&bcastr_flie='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'" />');
+	document.write('<embed src="css/focus.swf" wmode="opaque" FlashVars="config='+config+'&bcastr_flie='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'& menu="false" quality="high" width="'+ swf_width +'" height="'+ swf_height +'" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+	document.write('</object>');
+	</script>
+
+</div>
+<div class="imr">
+<div class="imt">
+宠物新闻
+</div>
+<marquee  scrollamount="1" direction="up" style="margin: 0 auto;padding: 0;">
+<ul>
+{tag_首页顶部推荐}
+</ul>
+</marquee >
+<div class="imf">
+</div>
+</div>
+</div>
+
+<div class="imc2">
+<div class="iflt2" style="padding-left: 10px;">
+<b>最新上架</b>
+</div>
+<div class="imcc2">
+<ul id="wenchuan">
+
+{sta:$i=1;/}
+{sta: foreach($goods_promote as $value)[loop]}
+
+<li>
+<table><tr>
+<td valign="top">
+<a href="{echo: goods_url($value['goods_id']);/}"><img  src="{echo: $value['is_set_image'] ? str_replace('thumb_','',$value['goods_thumb']) : 'skin/default/images/nopic.gif';/}" alt="{echo: $value['goods_name'];/}" width="112" height="112" onerror="this.src='skin/default/images/nopic.gif'" border="0"/></a></td>
+<td valign="top" style="padding-left:10px;line-height:22px;">
+<a href="{echo: goods_url($value['goods_id']);/}"  target="_blank">{echo: $value['goods_name'];/}</a><br>
+品种：
+<?php
+$catids=$value['cat_id'];
+$result = mysql_query("SELECT * FROM imall_category WHERE cat_id='$catids'");
+while($row = mysql_fetch_array($result))
+  {
+  echo  "<font color=red><b>".$row['cat_name']."</b></font>";
+
+  }
+?>
+<br>
+<table><tr><td>
+性别：<br>
+血统：<br>
+免疫：<br>
+</td><td>
+<?php
+$goodsids=$value['goods_id'];
+$result = mysql_query("SELECT * FROM imall_goods_attr  WHERE goods_id ='$goodsids'");
+while($row = mysql_fetch_array($result))
+  {
+  echo  $row['attr_values']."<br>";
+
+  }
+?>
+</td></tr></table>
+
+价格：<font color="red" size="3"><b>{echo:$value['goods_price'];/}</b></font> 元
+</td>
+</tr></table>
+</li>
+
+
+
+			{sta:$i++;/}
+		{end:foreach/}
+
+
+</ul>
+<script type="text/javascript">
+var scrollnews = document.getElementById('wenchuan');
+var lis = scrollnews.getElementsByTagName('li');
+var ml = 0;
+var timer1 = setInterval(function(){
+    var liHeight = lis[0].offsetHeight;
+    var timer2 = setInterval(function(){
+     scrollnews.scrollTop = (++ml);
+     if(ml == liHeight){
+        clearInterval(timer2);
+        scrollnews.scrollTop = 0;
+        ml = 0;
+        lis[0].parentNode.appendChild(lis[0]);
+     }
+  },10);
+},2000);
+</script>
+</div>
+<div class="iflm">
+</div>
+</div>
+
+   {sta: foreach(array_slice ($CATEGORY[0], 0, 5) as $key=>$cat)[loop]}
+<div class="ifl">
+<div class="iflt">
+{echo: $cat['cat_name'];/}
+</div>
+{sta:if(isset($CATEGORY[$cat['cat_id']]) && $CATEGORY[$cat['cat_id']])[exc]}
+<ul>
+     {sta: foreach(array_slice ($CATEGORY[$cat['cat_id']], 0, 8) as $subcat)[loop]}
+<li><a href="{echo: category_url($subcat['cat_id']);/}" title="{echo: $cat['cat_name'];/}">{echo: $subcat['cat_name'];/}</a></li>
+  {end:foreach/}
+</ul>
+   {end:if/}
+<div class="iflm">
+</div>
+</div>
+{end:foreach/}
+
+		
+
+<div class="imc">
+<div class="iflt2">
+<div class="ifltl" style="padding-left: 13px;">
+<b>金毛犬</b>
+</div>
+<div class="ifltr">
+</div>
+</div>
+<div class="imcc">
+<ul>
+<?php
+$result = mysql_query("SELECT * FROM imall_goods  WHERE cat_id='11'");
+while($row = mysql_fetch_array($result))
+  {
+?>
+<li>
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>"><img  src="<?php echo $row['goods_thumb']; ?>" alt=""  border="0"  class="itt"></a><br>
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>"  target="_blank"><?php echo $row['goods_name']; ?></a><br>
+￥ <font color=#F11F0E size=6><b><?php echo $row['goods_price']; ?></b></font> 
+<br>
+<img src="/css/sold.jpg" border="0">&nbsp;已售<?php echo rand(31,56); ?>件&nbsp;&nbsp;
+<img src="/css/hit.jpg" border="0">&nbsp;人气<?php echo rand(580,1960); ?><br>
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>" target="_blank"><img src="/css/gm.jpg" border="0"></a>&nbsp;&nbsp;
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>" target="_blank"><img src="/css/sc.jpg" border="0"></a><br>
+<img src="/css/rz.jpg" border="0">
+</li>
+
+<?
+
+  echo "<br />";
+  }
+?>
+</ul>
+</div>
+<div class="iflm">
+</div>
+</div>
+
+<div class="imc">
+<div class="iflt2">
+<div class="ifltl" style="padding-left: 13px;">
+<b>泰迪犬</b>
+</div>
+<div class="ifltr">
+
+</div>
+</div>
+<div class="imcc">
+<ul>
+<?php
+$result = mysql_query("SELECT * FROM imall_goods  WHERE cat_id='8'");
+while($row = mysql_fetch_array($result))
+  {
+?>
+<li>
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>"><img  src="<?php echo $row['goods_thumb']; ?>" alt=""  border="0"  class="itt"></a><br>
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>"  target="_blank"><?php echo $row['goods_name']; ?></a><br>
+￥ <font color=#F11F0E size=6><b><?php echo $row['goods_price']; ?></b></font> 
+<br>
+<img src="/css/sold.jpg" border="0">&nbsp;已售<?php echo rand(31,56); ?>件&nbsp;&nbsp;
+<img src="/css/hit.jpg" border="0">&nbsp;人气<?php echo rand(580,1960); ?><br>
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>" target="_blank"><img src="/css/gm.jpg" border="0"></a>&nbsp;&nbsp;
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>" target="_blank"><img src="/css/sc.jpg" border="0"></a><br>
+<img src="/css/rz.jpg" border="0">
+</li>
+
+<?
+
+  echo "<br />";
+  }
+?>
+</ul>
+</div>
+<div class="iflm">
+</div>
+</div>
+
+<div class="imc">
+<div class="iflt2">
+<div class="ifltl" style="padding-left: 13px;">
+<b>萨摩耶犬</b>
+</div>
+<div class="ifltr">
+</div>
+</div>
+<div class="imcc">
+<ul>
+<?php
+$result = mysql_query("SELECT * FROM imall_goods  WHERE cat_id='17'");
+while($row = mysql_fetch_array($result))
+  {
+?>
+<li>
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>"><img  src="<?php echo $row['goods_thumb']; ?>" alt=""  border="0"  class="itt"></a><br>
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>"  target="_blank"><?php echo $row['goods_name']; ?></a><br>
+￥ <font color=#F11F0E size=6><b><?php echo $row['goods_price']; ?></b></font> 
+<br>
+<img src="/css/sold.jpg" border="0">&nbsp;已售<?php echo rand(31,56); ?>件&nbsp;&nbsp;
+<img src="/css/hit.jpg" border="0">&nbsp;人气<?php echo rand(580,1960); ?><br>
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>" target="_blank"><img src="/css/gm.jpg" border="0"></a>&nbsp;&nbsp;
+<a href="/goods.php?id=<?php echo $row['goods_id']; ?>" target="_blank"><img src="/css/sc.jpg" border="0"></a><br>
+<img src="/css/rz.jpg" border="0">
+</li>
+
+<?
+
+  echo "<br />";
+  }
+?>
+</ul>
+</div>
+<div class="iflm">
+</div>
+</div>
+
+<div class="ifl">
+<div class="iflt">
+友情链接
+</div>
+<div class="ilk">
+<ul>
+<?php
+$result = mysql_query("SELECT * FROM imall_flink where is_show=1");
+while($row = mysql_fetch_array($result))
+  {
+?>
+<li>
+<a href="/goods.php?id=<?php echo $row['site_url']; ?>"  target="_blank"><?php echo $row['brand_name']; ?></a><br>
+</li>
+
+<?
+
+  echo "<br />";
+  }
+?>
+</ul>
+</div>
+<div class="iflm">
+</div>
+</div>
+<div class="ift0">
+&nbsp;
+</div>
+  {inc: include("shop/index_footer.php");/}

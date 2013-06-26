@@ -1,0 +1,136 @@
+﻿ a{text-decoration: none;font-family: &#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;} /* 链接无下划线,有为underline */ 
+a:link {color: #000000;font-family: &#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;} /* 未访问的链接 */
+a:visited {color:#313131;font-family: &#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;} /* 已访问的链接 */
+a:hover{COLOR:#E00E03;font-family: &#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;} /* 鼠标在链接上 */ 
+a:active {color: #313131;} /* 点击激活链接 */
+body{
+margin:0 auto;
+padding:0;
+font-size: 12px;
+text-decoration: none;
+color: #000000;
+font-family: &#x5FAE;&#x8F6F;&#x96C5;&#x9ED1;
+}
+ul{
+margin:0; padding:0
+}
+li{
+list-style-type: none;
+}
+p{
+margin: 0 auto;
+padding: 0;
+}
+.clear{
+clear:both; line-height:0; visibility:hidden; overflow:hidden;
+}
+img{vertical-align:top;}
+input{
+border-color:#BFC5C6;border-width:1px;border-style:Solid;
+height:17px;
+line-height:17px;
+padding-left:2px;
+}
+textarea{
+border-color:#BFC5C6;border-width:1px;border-style:Solid;
+line-height:150%;
+padding-left:2px;
+overflow:   hidden
+}
+select{
+border-color:#BFC5C6;border-width:1px;border-style:Solid;
+line-height:150%;
+padding-left:2px;
+overflow:   hidden
+}
+h2{
+margin:0;
+padding:0;
+font-size:14px;
+
+}
+
+ 
+.bt{
+height:30px;
+background:url(bt.jpg);
+}
+
+.btl{
+float:left;
+}
+.btl a:link{
+color:#F90070
+}
+.btl a:visited{
+color:#F90070
+}
+.btl a:hover{
+color:#CC005B
+}
+.btr{
+height:30px;
+float:right;
+}
+.btr a:link{
+color:#F90070
+}
+.btr a:visited{
+color:#F90070
+}
+.btr a:hover{
+color:#CC005B;
+}
+
+.bt1{
+height:30px;
+line-height:30px;
+border-top: #4F94DF 1px solid;
+border-bottom: #4F94DF 1px solid;
+FILTER:progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr='#E1E1E1',endColorStr='#ffffff');
+color: #2471C6;
+}
+.bt1l{
+font-size:16px;
+
+font-family:幼圆;
+padding-left:12px;
+width:80px;
+border-right: #E3E3E3 1px solid;
+FILTER:progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr='#ffffff',endColorStr='#E1E1E1');
+
+}
+.bt1l a:link{
+color: #2471C6;
+}
+.bt1l a:visted{
+color: #2471C6;
+}
+.bt1 a:hover{
+font-weight:bold;
+}
+
+
+
+.list{
+padding:3px;
+}
+.list li{
+height:21px;
+line-height:21px;
+padding-left:5px;
+border-bottom: 1px #FFCEE4 dashed;
+}
+
+
+.page{
+text-align:center;
+}
+
+.more{
+width:60px;
+}
+
+
+
+.ccav{FILTER:progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr='#ffffff',endColorStr='#ffffff');}

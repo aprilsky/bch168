@@ -1,0 +1,1 @@
+document.write('<a href="http://www.jooyea.net"><img src="docs/images/asd/2010/1.jpg" width="960" height="90" alt="iwebshop"></a>');

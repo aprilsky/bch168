@@ -1,0 +1,61 @@
+<script language="javascript" type="text/javascript">
+function SetCookie (name, value) {
+	var today = new Date();
+	var expires = new Date();
+	expires.setTime(today.getTime() + 1000 * 60 * 60 * 24 * 365);
+	document.cookie = name + "=" + escape(value) + "; expires=" + expires.toGMTString();
+}
+function selectlangpackage(v){
+	SetCookie ('language', v);
+	window.location.reload();
+}
+</script>
+</div>
+<div class="ibq">
+<div class="ibqc">
+<ul style="width: 330px;">
+
+</ul>
+<ul>
+<h3>支付方式</h3>
+<li><a href="/fukuan.html#1" target="_blank">货到付款</a></li>
+<li><a href="/fukuan.html#2" target="_blank">余额支付</a></li>
+<li><a href="/fukuan.html#3" target="_blank">银行到账</a></li>
+<li><a href="/fukuan.html#4" target="_blank">在线支付</a></li>
+</ul>
+<ul>
+<h3>配送方式</h3>
+<li><a href="/peisong.html#1" target="_blank">外包快递</a></li>
+<li><a href="/peisong.html#2" target="_blank">物流运输</a></li>
+<li><a href="/peisong.html#3" target="_blank">送货上门</a></li>
+<li><a href="/peisong.html#4" target="_blank">上门自取</a></li>
+</ul>
+<ul style="width: 160px;" target="_blank">
+<h3>购物指南</h3>
+<li><a href="/zhinan.html#1" target="_blank">退换政策</a></li>
+<li><a href="/zhinan.html#2" target="_blank">订单说明</a></li>
+<li><a href="/zhinan.html#3" target="_blank">积分计算</a></li>
+<li><a href="/zhinan.html#4" target="_blank">常见问题</a></li>
+</ul>
+<ul style="width: 120px;" target="_blank">
+<h3>关于我们</h3>
+<li><a href="/about.html#1" target="_blank">关于我们</a></li>
+<li><a href="/about.html#2" target="_blank">代理加盟</a></li>
+<li><a href="/about.html#3" target="_blank">人才招聘</a></li>
+<li><a href="/about.html#1" target="_blank">联系我们</a></li>
+</ul></div>
+</div>
+<div class="ift">
+<div class="iftc">
+ <!-- {echo:lp{i_language_ch};/}：{echo: show_back_lp($langpackage);/} 
+    {echo:lp{i_language_ch};/}{echo: show_back_lp($langpackage);/}-->
+    <a href="{echo: article_url(2);/}">{echo:lp{i_question_see};/}</a>|<a href="{echo: article_url(3);/}">{echo:lp{i_safe_compp};/}</a>|<a href="{echo: article_url(4);/}">{echo:lp{i_process_of_purchase};/}</a>|<a href="{echo: article_url(5);/}">{echo:lp{i_howto_pay};/}</a>|<a href="{echo: article_url(6);/}">{echo:lp{i_contact_us};/}</a>|<a href="{echo: article_url(7);/}">{echo:lp{i_make_a_proposal};/}</a>|<a href="{echo: article_url(8);/}">{echo:lp{i_site_map};/}</a></p>
+  <p>Powered by <a href="http://www.bch168.com">BCH{echo: $SYSINFO['version'];/}</a>{echo: $SYSINFO['sys_company'];/}</p>
+  {echo: $SYSINFO['sys_copyright'];/} {echo: $SYSINFO['sys_icp'];/} {echo: $SYSINFO['sys_countjs'];/} 
+</div>
+</div>
+</body>
+</html>
+
+
+
