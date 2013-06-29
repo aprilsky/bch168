@@ -101,7 +101,7 @@ $sql = "SELECT * FROM $t_shop_guestbook WHERE shop_id='$shop_id' AND shop_del_st
 $guestbook_list = $dbo->getRs($sql);
 $nav_selected="";
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?>﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title><?php echo  $header['title'];?></title>
@@ -110,16 +110,17 @@ $nav_selected="";
 <meta name="keywords" content="<?php echo  $header['keywords'];?>" />
 <meta name="description" content="<?php echo  $header['description'];?>" />
 <base href="<?php echo  $baseUrl;?>" />
+<link href="/css/css.css" type="text/css" rel="stylesheet" />
+<link href="/css/index.css" rel="stylesheet" type="text/css" />
 <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/import.css" type="text/css" rel="stylesheet" />
 <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/shop.css" rel="stylesheet" type="text/css" />
 <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/shop_<?php echo  $SHOP['shop_template'];?>.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="skin/<?php echo  $SYSINFO['templates'];?>/js/changeStyle.js"></script>
 </head>
 <body>
-<!-- wrapper -->
-<div id="wrapper"> <?php  require("shop/index_header.php");?>
+<?php  require("shop/index_header.php");?>
   <!-- contents -->
-  <div id="contents" class="clearfix" >
+  <div id="contents" class="clearfix" style="width: 980px;margin: 0 auto;padding: 0;">
     <div id="pkz">
 <!--    	<?php echo $s_langpackage->s_this_location;?><a href="index.php"><?php echo  $SYSINFO['sys_name'];?></a> &gt; <a href="shop_list.php"><?php echo $s_langpackage->s_shop_category;?></a> &gt;-->
 <!--    	<?php foreach($shop_rank_arr as $k=>$value){?>-->

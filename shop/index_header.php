@@ -43,8 +43,9 @@ $ksearch=short_check(get_args("k"));
 if($i_langpackage->i_search_keyword==$ksearch){
 	$ksearch="";
 }
-?><link href="/css/css.css" type="text/css" rel="stylesheet" />
-<link href="/css/index.css" rel="stylesheet" type="text/css" />
+?><link href="<?php echo  $baseUrl;?>/css/css.css" type="text/css" rel="stylesheet" />
+<link href="<?php echo  $baseUrl;?>/css/index.css" rel="stylesheet" type="text/css" />
+<link href="skin/<?php echo  $SYSINFO['templates'];?>/css/article.css" type="text/css" rel="stylesheet" />
 <div class="hds">
 <div class="hd">
 
@@ -56,14 +57,14 @@ if($i_langpackage->i_search_keyword==$ksearch){
 </div>
 <div class="nv">
 <ul>
-<li style="width: 90px;"><a href="/">首页</a></li>
-<li style="width: 98px;"><a href="/search.php">买狗狗</a></li>
-<li style="width: 90px;"><a href="/search.php?search_type=搜商家">犬舍</a></li>
-<li style="width: 100px;"><a href="/zhishi/">养狗问答</a></li>
-<li style="width: 95px;"><a href="/free.html">免费领狗</a></li>
-<li style="width: 90px;"><a href="/use/">用品商城</a></li>
-<li style="width: 100px;"><a href="/jiameng.html">代理加盟</a></li>
-<li style="width: 100px;"><a href="/kefu.html">客服服务</a></li>
+<li style="width: 90px;"><a href="<?php echo  $baseUrl;?>">首页</a></li>
+<li style="width: 98px;"><a href="<?php echo  $baseUrl;?>search.php">买狗狗</a></li>
+<li style="width: 90px;"><a href="<?php echo  $baseUrl;?>search.php?search_type=搜商家">犬舍</a></li>
+<li style="width: 100px;"><a href="<?php echo  $baseUrl;?>answer.php/">养狗问答</a></li>
+<li style="width: 95px;"><a href="http://www.bch168.com/free.html">免费领狗</a></li>
+<li style="width: 90px;"><a href="http://www.bch168.com/use/">用品商城</a></li>
+<li style="width: 100px;"><a href="http://www.bch168.com/jiameng.html">代理加盟</a></li>
+<li style="width: 100px;"><a href="http://www.bch168.com/kefu.html">客服服务</a></li>
 <li style="width: 200px;text-align: left;padding-left: 26px;">搜索一下</li>
 </ul>
 </div>

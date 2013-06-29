@@ -3,7 +3,7 @@ function tpl_engine($tpl_instance,$tpl_name,$type=0,$compile_type="debug",$insta
 	$base_root = preg_match("/\//",$tpl_name);
 	$allow_file_array = array("aboutus.html","aboutus.htm","brand.html","brand.htm","category.html","category.htm","error.html",
 	"help.html","help.htm","login.html","login.htm","search.html","search.htm","index.html","index.htm","search_ad.html",
-	"groupbuy.html","brand_list.html","brand_info.html","shop_list.html","succes.html","404.html");
+	"groupbuy.html","brand_list.html","brand_info.html","shop_list.html","succes.html","answer.html","404.html");
 	$is_allow=in_array($tpl_name,$allow_file_array);
 	$creat_path="../";
 	$model_path="../models/";

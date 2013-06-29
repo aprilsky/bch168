@@ -1,4 +1,34 @@
 
 .DS_Store
 
-.idea/.name
+.idea/*
+
+.idea/workspace.xml
+
+*.iml
+
+.idea/scopes/scope_settings.xml
+
+.idea/sqldialects.xml
+
+.idea/vcs.xml
+
+.idea/vcs.xml
+
+.idea/modules.xml
+
+.idea/bch168.com.iml
+
+.idea/encodings.xml
+
+.idea/encodings.xml
+
+.idea/inspectionProfiles/Project_Default.xml
+
+.idea/inspectionProfiles/profiles_settings.xml
+
+.idea/inspectionProfiles/profiles_settings.xml
+
+.idea/misc.xml
+
+.idea/misc.xml

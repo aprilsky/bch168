@@ -29,7 +29,7 @@ if(!$IWEB_SHOP_IN) {
 	trigger_error('Hacking attempt');
 }
  
-?><?php $plugins=array();?>
+?><?php $plugins=unserialize('a:0:{}');?>
 <div class="header">
     <div class="top">
         <div class="top_left left"></div>

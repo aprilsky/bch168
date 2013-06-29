@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>{echo: $header['title'];/}</title>
+    <meta name="keywords" content="{echo: $header['keywords'];/}" />
+    <meta name="description" content="{echo: $header['description'];/}" />
+    <link href="skin/{echo: $SYSINFO['templates'];/}/css/import.css" type="text/css" rel="stylesheet" />
+    <link href="skin/{echo: $SYSINFO['templates'];/}/css/parts.css" type="text/css" rel="stylesheet" />
+    <link href="skin/{echo: $SYSINFO['templates'];/}/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="skin/{echo: $SYSINFO['templates'];/}/css/article.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="skin/{echo: $SYSINFO['templates'];/}/js/changeStyle.js"></script>
+    <base href="{echo: $baseUrl;/}" />
+</head>
+<body>
+{inc: include("shop/index_header.php");/}
+<div id="artContents">
+    <div class="artpan">
+        <ul class="artlist_txt">
+            <?php
+            foreach($answer_result as $v){
+                echo '<li class="clearfix"><span class="right">'.$v['add_time'].'</span>
+            <a class="ttls" href="article.php/35.html"><span style="color:rgb(0, 204, 255) ">'.$v['title'].'</span></a></li>';
+            }?>
+        </ul>
+
+    </div>
+</div>
+
+</body>
+</html>

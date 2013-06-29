@@ -29,8 +29,8 @@ $session_prefix = 'iweb_';
 
 // web访问根目录
 
-$baseUrl = 'http://www.bch168.com/';
-
+//$baseUrl = 'http://www.bch168.com/';
+$baseUrl = 'http://localhost/bch168/';
 
 // url_rewrite 是否开启
 $url_rewrite = false;

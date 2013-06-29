@@ -18,7 +18,8 @@
 	$errstr=urlencode($errstr);
 	if(!headers_sent())
 	{
-	    header('Location:'.$baseUrl.'error.php?errstr='.$errstr);
+        echo $errstr;
+	   // header('Location:'.$baseUrl.'error.php?errstr='.$errstr);
 	}
 	else
 	{

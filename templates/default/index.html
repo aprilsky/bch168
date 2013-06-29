@@ -7,8 +7,8 @@
 <meta name="keywords" content="{echo: $header['keywords'];/}" />
 <meta name="description" content="{echo: $header['description'];/}" />
 <base href="{echo: $baseUrl;/}" />
-<link href="/css/css.css" type="text/css" rel="stylesheet" />
-<link href="/css/index.css" rel="stylesheet" type="text/css" />
+<link href="{echo: $baseUrl;/}/css/css.css" type="text/css" rel="stylesheet" />
+<link href="{echo: $baseUrl;/}/css/index.css" rel="stylesheet" type="text/css" />
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <script type="text/javascript" src="skin/{echo:$SYSINFO['templates'];/}/js/changeStyle.js"></script>
 <script src="skin/{echo:$SYSINFO['templates'];/}/js/slide.js" type="text/javascript"></script>
@@ -135,23 +135,23 @@ while($row = mysql_fetch_array($result))
 		{end:foreach/}
 
 </ul>
-<script type="text/javascript">
-var scrollnews = document.getElementById('wenchuan');
-var lis = scrollnews.getElementsByTagName('li');
-var ml = 0;
-var timer1 = setInterval(function(){
-    var liHeight = lis[0].offsetHeight;
-    var timer2 = setInterval(function(){
-     scrollnews.scrollTop = (++ml);
-     if(ml == liHeight){
-        clearInterval(timer2);
-        scrollnews.scrollTop = 0;
-        ml = 0;
-        lis[0].parentNode.appendChild(lis[0]);
-     }
-  },10);
-},2000);
-</script>
+    <!--<script type="text/javascript">
+        var scrollnews = document.getElementById('wenchuan');
+        var lis = scrollnews.getElementsByTagName('li');
+        var ml = 0;
+        var timer1 = setInterval(function(){
+            var liHeight = lis[0].offsetHeight;
+            var timer2 = setInterval(function(){
+                scrollnews.scrollTop = (++ml);
+                if(ml == liHeight){
+                    clearInterval(timer2);
+                    scrollnews.scrollTop = 0;
+                    ml = 0;
+                    lis[0].parentNode.appendChild(lis[0]);
+                }
+            },10);
+        },2000);
+    </script>-->
 </div>
 <div class="iflm">
 </div>

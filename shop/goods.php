@@ -202,7 +202,7 @@ if($result_category) {
 
 	}
 }
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?>﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title><?php echo  $header['title'];?></title>
@@ -211,6 +211,8 @@ if($result_category) {
 <meta name="keywords" content="<?php echo  $header['keywords'];?>" />
 <meta name="description" content="<?php echo  $header['description'];?>" />
 <base href="<?php echo  $baseUrl;?>" />
+<link href="/css/css.css" type="text/css" rel="stylesheet" />
+<link href="/css/index.css" rel="stylesheet" type="text/css" />
 <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/index.css" rel="stylesheet" type="text/css" />
 <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/import.css" type="text/css" rel="stylesheet" />
 <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/shop.css" type="text/css" rel="stylesheet" />
@@ -249,8 +251,8 @@ function changeImage(obj){
 </style>
 </head>
 <body>
-<div id="wrapper" style=""> <?php  include("shop/index_header.php");?>
-	<div id="contents" class="clearfix" >
+<?php  include("shop/index_header.php");?>
+	<div id="contents" class="clearfix"  style="width: 980px;margin: 0 auto;padding: 0;">
 		<div id="sub_channel">
 			<ul class="clearfix">
 				<li>

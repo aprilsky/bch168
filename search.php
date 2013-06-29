@@ -368,7 +368,7 @@ if($result_category) {
 
 	}
 }
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?>﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -379,40 +379,13 @@ if($result_category) {
 <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/import.css" type="text/css" rel="stylesheet" />
 <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/parts.css" type="text/css" rel="stylesheet" />
 <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/article.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="skin/<?php echo  $SYSINFO['templates'];?>/js/changeStyle.js"></script>
 <base href="<?php echo  $baseUrl;?>" />
 </head>
 <body>
-<!-- wrapper -->
-<div id="wrapper">
-	<!-- header -->
-	<?php  include("shop/index_header.php");?>
-	<!-- /header -->
-	<!-- contents -->
-	<div id="contents" class="clearfix" >
-		<div id="channel" class="clearfix">
-			<ul class="clearfix">
-				<li >
-					<h2><img onmouseover="show_obj('category_box1')" onmouseout="hidden_obj('category_box1')" src="skin/default/images/ttl_channel_all.gif" alt="<?php echo $i_langpackage->i_allgoodsheader_category;?>" /></h2>
-				</li>
-				<?php  foreach($nav_list as  $value){?>
-				<li><span><a href="<?php echo  $value['url'];?>"><?php echo  $value['nav_name'];?></a>|</span></li>
-				<?php }?>
-			</ul>
-		</div>
-	</div>
-	<div id="category_box1" class="allMerchan" style="display:none;" onmouseover="show_obj(this)"  onmouseout="hidden_obj(this)">
-		<ul  >
-			<?php  foreach(array_slice ($CATEGORY1[0], 0) as $key=>$cat){?>
-			<li class="clearfix">
-				<h3><a href="<?php echo  category_url($cat['cat_id']);?>" title="<?php echo  $cat['cat_name'];?>"><?php echo  $cat['cat_name'];?></a></h3>
-				<?php if(isset($CATEGORY1[$cat['cat_id']]) && $CATEGORY1[$cat['cat_id']]){?>
-				<p> <?php  foreach(array_slice ($CATEGORY1[$cat['cat_id']], 0, 8) as $subcat){?> <a href="<?php echo  category_url($subcat['cat_id']);?>" title="<?php echo  $cat['cat_name'];?>"><?php echo  $subcat['cat_name'];?></a>|
-					<?php }?> </p>
-				<?php }?> </li>
-			<?php }?>
-		</ul>
-	</div>
+<?php  include("shop/index_header.php");?>
+
 	<div class="SubCategoryBox mg12b">
 		<h3><?php echo $i_langpackage->i_category_filter;?></h3>
 		<?php if($search_type==$i_langpackage->i_goods_search){?>
