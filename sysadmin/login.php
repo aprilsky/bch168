@@ -35,7 +35,7 @@ td {font-size:12px; line-height:18px;}
     </div>
 </div>
 <script language="JavaScript">
-<!--
+//<!--
 function checkform() {
 	var admin_name = document.getElementById("admin_name").value;
 	if(!admin_name) {

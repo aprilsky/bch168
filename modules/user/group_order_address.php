@@ -278,7 +278,7 @@ function newAddress(){
 	clearaddress();
 }
 
-<!--
+
 function areachanged(value,type){
 	if(value > 0) {
 		ajax("do.php?act=ajax_areas","POST","value="+value+"&type="+type,function(return_text){

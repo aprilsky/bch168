@@ -433,15 +433,12 @@ while($row = mysql_fetch_array($result))
 
 <?
 
-  echo "<br />";
+  //echo "<br />";友情链接
   }
 ?>
 </ul>
 </div>
 <div class="iflm">
 </div>
-</div>
-<div class="ift0">
-&nbsp;
 </div>
   <?php  include("shop/index_footer.php");?><?php } ?>

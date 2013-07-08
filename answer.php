@@ -382,33 +382,135 @@ if($result_category) {
 ?>﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-    <title><?php echo  $header['title'];?></title>
-    <meta name="keywords" content="<?php echo  $header['keywords'];?>" />
-    <meta name="description" content="<?php echo  $header['description'];?>" />
-    <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/import.css" type="text/css" rel="stylesheet" />
-    <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/parts.css" type="text/css" rel="stylesheet" />
-    <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/index.css" rel="stylesheet" type="text/css" />
-    <link href="skin/<?php echo  $SYSINFO['templates'];?>/css/article.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="skin/<?php echo  $SYSINFO['templates'];?>/js/changeStyle.js"></script>
-    <base href="<?php echo  $baseUrl;?>" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title><?php echo  $header['title'];?></title>
+<meta name="keywords" content="<?php echo  $header['keywords'];?>" />
+<meta name="description" content="<?php echo  $header['description'];?>" />
+<link href="skin/<?php echo  $SYSINFO['templates'];?>/css/import.css"
+	type="text/css" rel="stylesheet" />
+<link href="skin/<?php echo  $SYSINFO['templates'];?>/css/parts.css"
+	type="text/css" rel="stylesheet" />
+<link href="skin/<?php echo  $SYSINFO['templates'];?>/css/index.css"
+	rel="stylesheet" type="text/css" />
+<link href="skin/<?php echo  $SYSINFO['templates'];?>/css/article.css"
+	type="text/css" rel="stylesheet" />
+<link href="skin/<?php echo  $SYSINFO['templates'];?>/css/answer.css"
+	type="text/css" rel="stylesheet" />
+<script type="text/javascript"
+	src="skin/<?php echo  $SYSINFO['templates'];?>/js/changeStyle.js"></script>
+<base href="<?php echo  $baseUrl;?>" />
 </head>
 <body>
-<?php  include("shop/index_header.php");?>
-<div id="artContents">
-    <div class="artpan">
-        <ul class="artlist_txt">
-            <?php
-            foreach($answer_result as $v){
-                echo '<li class="clearfix"><span class="right">'.$v['add_time'].'</span>
-            <a class="ttls" href="article.php/35.html"><span style="color:rgb(0, 204, 255) ">'.$v['title'].'</span></a></li>';
-            }?>
-        </ul>
-
-    </div>
+	<?php  include("shop/index_header.php");?>
+<!-- 狗狗种类 -->
+	<div class="ifl">
+		<div class="iflt">狗狗种类</div>
+			<ul>
+				<li><a href="" title="贵宾犬">贵宾犬</a></li>
+				<li><a href="" title="泰迪犬">泰迪犬</a></li>
+				<li><a href="" title="哈士奇">哈士奇</a></li>
+				<li><a href="" title="吉娃娃">吉娃娃</a></li>
+				<li><a href="" title="雪纳">雪纳</a></li>
+				<li><a href="" title="雪纳">瑞迷你</a></li>
+				<li><a href="" title="雪纳">杜宾犬</a></li>
+				<li><a href="" title="雪纳">柯基犬</a></li>
+				<li><a href="" title="雪纳">腊肠犬</a></li>
+			</ul>
+		<div class="iflm"></div>
+	</div>
+<!-- 宠物新闻 -->
+	<div id="answer_Contents">
+		<div id="answer_left">1</div>
+		<div id="answer_center">
+			<div id="news_tip">宠物新闻</div>
+            <div id="news_con">
+                <ul class="news_ul">
+                    <li><a href="#">哈士奇是狼是狗？</a><span>2013-07-03</span></li>
+                    <li><a href="#">藏獒传奇</a><span>2013-07-03</span></li>
+                </ul>
+            </div>
+		</div>
+		<div id="answer_right">
+			<div id="knowledge_tip">哈士奇养护知识</div>
+            <div id="knowledge_con">
+                <ul class="news_ul">
+                    <li><a href="#">养哈士奇之前必看知识养哈士奇...</a><span>2013-07-03</span></li>
+                    <li><a href="#">养哈士奇之前必看知识养哈士奇...</a><span>2013-07-03</span></li>
+                </ul>
+            </div>
+		</div>
+	</div>
+<!-- 全新宝贝 -->
+<div class="imc2">
+	<div class="iflt2" style="padding-left: 10px;">
+		<b>最新上架</b>
+	</div>
+	<div class="imcc2">
+		<ul id="wenchuan">
+			<li>
+			<table>
+				<tbody>
+					<tr>
+						<td valign="top"><a href="goods.php?id=20"><img src="uploadfiles/goods/2010/11/29/2010112903395765.jpg" alt="新款百达翡丽(Patek)复古系列多功能自动机械背透手表" width="112" height="112" onerror="this.src='skin/default/images/nopic.gif'" border="0"/></td>
+						<td valign="top" style="padding-left: 10px; line-height: 22px;">
+							<a href="goods.php?id=20" target="_blank">新款百达翡丽(Patek)复古系列多功能自动机械背透手表</a>
+							<br/>品种：<font color="red"><b>项链</b></font><br/>
+						<table>
+							<tbody>
+								<tr>
+									<td>性别：<br/>血统：<br/>免疫：<br/></td>
+								</tr>
+							</tbody>
+						</table>
+						价格：<font color="red" size="3"><b>588.00</b></font>元</td>
+					</tr>
+				</tbody>
+			</table>
+			</li>
+						<li>
+			<table>
+				<tbody>
+					<tr>
+						<td valign="top"><a href="goods.php?id=20"><img src="uploadfiles/goods/2010/11/29/2010112903395765.jpg" alt="新款百达翡丽(Patek)复古系列多功能自动机械背透手表" width="112" height="112" onerror="this.src='skin/default/images/nopic.gif'" border="0"/></td>
+						<td valign="top" style="padding-left: 10px; line-height: 22px;">
+							<a href="goods.php?id=20" target="_blank">新款百达翡丽(Patek)复古系列多功能自动机械背透手表</a>
+							<br/>品种：<font color="red"><b>项链</b></font><br/>
+						<table>
+							<tbody>
+								<tr>
+									<td>性别：<br/>血统：<br/>免疫：<br/></td>
+								</tr>
+							</tbody>
+						</table>
+						价格：<font color="red" size="3"><b>588.00</b></font>元</td>
+					</tr>
+				</tbody>
+			</table>
+			</li>
+						<li>
+			<table>
+				<tbody>
+					<tr>
+						<td valign="top"><a href="goods.php?id=20"><img src="uploadfiles/goods/2010/11/29/2010112903395765.jpg" alt="新款百达翡丽(Patek)复古系列多功能自动机械背透手表" width="112" height="112" onerror="this.src='skin/default/images/nopic.gif'" border="0"/></td>
+						<td valign="top" style="padding-left: 10px; line-height: 22px;">
+							<a href="goods.php?id=20" target="_blank">新款百达翡丽(Patek)复古系列多功能自动机械背透手表</a>
+							<br/>品种：<font color="red"><b>项链</b></font><br/>
+						<table>
+							<tbody>
+								<tr>
+									<td>性别：<br/>血统：<br/>免疫：<br/></td>
+								</tr>
+							</tbody>
+						</table>
+						价格：<font color="red" size="3"><b>588.00</b></font>元</td>
+					</tr>
+				</tbody>
+			</table>
+			</li>
+		</ul>
+	</div>
+	<div class="iflm"/>
 </div>
-
-</body>
-</html>
+  <?php  include("shop/index_footer.php");?>
 <?php } ?>

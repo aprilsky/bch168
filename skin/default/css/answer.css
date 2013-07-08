@@ -1,0 +1,145 @@
+@CHARSET "UTF-8";
+
+.imt {
+	background: url("bt1.jpg") no-repeat;
+	color: #F85007;
+	font-size: 16px;
+	height: 38px;
+	line-height: 38px;
+	padding-left: 20px;
+	width: 228px;
+}
+
+#answer_Contents {
+	border: none;
+	float: left;
+	height: 300px;
+	margin-top: 5px;
+	width: 990px;
+	
+}
+
+#answer_left {
+	float: left;
+	border: 1px solid #CCCCCC;
+	width: 320px;
+	height: 300px;
+}
+#answer_center {
+	float: left;
+	margin-left:12px;
+	border: 1px solid #CCCCCC;
+	width: 320px;
+	height: 300px;
+}
+#answer_right {
+	float: right;
+	border: 1px solid #CCCCCC;
+	width: 320px;
+	height: 300px;
+}
+
+.answer_left_head {
+	background-image: url(http://localhost/bch168//css/bt1.jpg);
+	background-position: initial initial;
+	background-repeat: initial initial;
+	color: #F85007;
+	font-size: 16px;
+	height: 400px;
+	line-height: 38px;
+	padding-left: 20px;
+	width: 330px;
+}
+
+#main{
+    width: 80%;
+    margin-top: 10% ;
+    margin-left: 10%;
+}
+#cat_tip{
+    width: 228px;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #F85007;
+    background-color: #eeeeee;
+}
+#knowledge_tip{
+    height: 38px;
+    line-height: 38px;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #F85007;
+    background-color: #eeeeee;
+}
+#category{
+    height: 270px;
+    float: left;
+    border: 1px solid gainsboro;
+    margin-bottom: 4px;
+}
+#knowledge{
+    float: right;
+    width: 740px;
+    height: 800px;
+    border: 1px solid gainsboro;
+}
+#news{
+    height: 270px;
+    float: left;
+    margin-top: 3px;
+    border: 1px solid gainsboro;
+}
+#news_tip{
+    width: 320px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 16px;
+    color: #F85007;
+    background-color: #eeeeee;
+}
+#cat_con ul li{
+    float:left;
+    list-style:none;
+    display:inline;
+    padding-left: 15px;
+}
+#cat_con ul{
+    padding-left: 1px;
+}
+a:visited{
+    color:#000000;
+    text-decoration:none;
+}
+
+
+#cat_con a{
+    font-size: 13px;
+    text-decoration: none;
+}
+#cat_con a:hover{
+    color: red;
+}
+
+.news_ul{
+    padding-left: 10px;
+    margin-top: 10px;
+}
+.news_ul li{
+    list-style: none;
+    line-height: 20px;
+    border-bottom:1px dashed #aaa;
+}
+.news_ul span{
+    float: right;
+    padding-right: 10px;
+    font-size: 10px;
+}
+.news_ul a{
+     font-size: 13px;
+     text-decoration: none;
+ }
+.news_ul a:hover{
+    color: red;
+}
