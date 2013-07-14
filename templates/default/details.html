@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>{echo: $header['title'];/}</title>
+<meta name="keywords" content="{echo: $header['keywords'];/}" />
+<meta name="description" content="{echo: $header['description'];/}" />
+<link href="skin/{echo: $SYSINFO['templates'];/}/css/import.css" type="text/css" rel="stylesheet" />
+<link href="skin/{echo: $SYSINFO['templates'];/}/css/parts.css" type="text/css" rel="stylesheet" />
+<link href="skin/{echo: $SYSINFO['templates'];/}/css/index.css" rel="stylesheet" type="text/css" />
+<link href="skin/{echo: $SYSINFO['templates'];/}/css/article.css" type="text/css" rel="stylesheet" />
+<link href="skin/{echo: $SYSINFO['templates'];/}/css/details.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="skin/{echo: $SYSINFO['templates'];/}/js/changeStyle.js"></script>
+<base href="{echo: $baseUrl;/}" />
+</head>
+<body>
+	{inc: include("shop/index_header.php");/}
+<div id="details">
+    <div id="details_left">
+        <!-- 宠物新闻 -->
+        <div id="answer_center">
+            <div id="news_tip"><span style="padding-left: 10px;color: #fe6813;font-weight:900;">狗狗种类</span></div>
+                <div id="news_con">
+                    <ul class="leibei">
+                        <li><a href="" title="贵宾犬">贵宾犬</a></li>
+                        <li><a href="" title="泰迪犬">泰迪犬</a></li>
+                        <li><a href="" title="哈士奇">哈士奇</a></li>
+                        <li><a href="" title="吉娃娃">吉娃娃</a></li>
+                        <li><a href="" title="雪纳">雪纳</a></li>
+                        <li><a href="" title="瑞迷你">瑞迷你</a></li>
+                        <li><a href="" title="杜宾犬">杜宾犬</a></li>
+                        <li><a href="" title="柯基犬">柯基犬</a></li>
+                        <li><a href="" title="腊肠犬">腊肠犬</a></li>
+                        <li><a href="" title="贵宾犬">贵宾犬</a></li>
+                        <li><a href="" title="泰迪犬">泰迪犬</a></li>
+                        <li><a href="" title="哈士奇">哈士奇</a></li>
+                        <li><a href="" title="吉娃娃">吉娃娃</a></li>
+                        <li><a href="" title="雪纳">雪纳</a></li>
+                        <li><a href="" title="瑞迷你">瑞迷你</a></li>
+                        <li><a href="" title="杜宾犬">杜宾犬</a></li>
+                        <li><a href="" title="柯基犬">柯基犬</a></li>
+                        <li><a href="" title="腊肠犬">腊肠犬</a></li>
+                        <li><a href="" title="贵宾犬">贵宾犬</a></li>
+                        <li><a href="" title="泰迪犬">泰迪犬</a></li>
+                        <li><a href="" title="哈士奇">哈士奇</a></li>
+                        <li><a href="" title="吉娃娃">吉娃娃</a></li>
+                        <li><a href="" title="雪纳">雪纳</a></li>
+                        <li><a href="" title="瑞迷你">瑞迷你</a></li>
+                        <li><a href="" title="杜宾犬">杜宾犬</a></li>
+                        <li><a href="" title="柯基犬">柯基犬</a></li>
+                        <li><a href="" title="腊肠犬">腊肠犬</a></li>
+                    </ul>
+                </div>
+                <div class="answer_bm"></div>
+        </div>
+        <!-- 哈士奇养护知识 -->
+        <div id="answer_right" style="margin-top: 5px;">
+            <div id="news_tip"><span style="padding-left: 10px;color: #fe6813;font-weight:900;">哈士奇养护知识</span></div>
+                <div id="news_con">
+                    <ul class="news_ul">
+    <!--                    <li><a href="#">养哈士奇之前必看知识养哈士奇...</a><span>2013-07-03</span></li>
+                        <li><a href="#">养哈士奇之前必看知识养哈士奇...</a><span>2013-07-03</span></li>-->
+                    <?php
+                    $result = mysql_query("SELECT * FROM imall_article where cat_id=8  order by article_id desc limit 0, 10");
+                    while($row = mysql_fetch_array($result))
+                      {
+                    ?>
+                    <li>
+                    <a href="details.php?id=<?php echo $row['article_id']; ?>"  target="_blank"><?php echo $row['title']; ?></a>
+                    <span><?php echo mb_substr($row['add_time'],0,10); ?></span>
+                    </li>
+                    <?
+                      }
+                    ?>
+                    </ul>
+                </div>
+                <div class="answer_bm"></div>
+        </div>
+        <!-- 哈士奇养护知识 -->
+        <div id="answer_right" style="margin-top: 5px;">
+            <div id="news_tip"><span style="padding-left: 10px;color: #fe6813;font-weight:900;">宠物新闻</span></div>
+                <div id="news_con">
+                    <ul class="news_ul">
+    <!--                    <li><a href="#">养哈士奇之前必看知识养哈士奇...</a><span>2013-07-03</span></li>
+                        <li><a href="#">养哈士奇之前必看知识养哈士奇...</a><span>2013-07-03</span></li>-->
+                    <?php
+                    $result = mysql_query("SELECT * FROM imall_article where cat_id=8  order by article_id desc limit 0, 10");
+                    while($row = mysql_fetch_array($result))
+                      {
+                    ?>
+                    <li>
+                    <a href="details.php?id=<?php echo $row['article_id']; ?>"  target="_blank"><?php echo $row['title']; ?></a>
+                    <span><?php echo mb_substr($row['add_time'],0,10); ?></span>
+                    </li>
+                    <?
+                      }
+                    ?>
+                    </ul>
+                </div>
+                <div class="answer_bm"></div>
+        </div>
+    </div>
+    <div id="details_right">
+        <div id="knowledge_tip"><span style="padding-left: 10px;color: #fe6813;font-weight:900;">如何让哈士奇接受欣狗狗？</span></div>
+        <div id="knowledge_con">
+            <div class="d_1"><span>来源:xxx</span><span>作者:xxx</span><span>时间:2013-05-01</span></div>
+            <div class="dashed"></div>
+            <p class="details_content">
+                这是段落中的一些文本。 。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。 这是段落中的一些文本。
+            </p>
+        </div>
+        <div id="knowledge_con_bm"></div>
+    </div>
+</div>
+<!-- 免费领狗 -->
+<div class="ifl">
+    <div class="iflt" style="margin-top: 5px;"><span style="color: #fe6813;font-weight:900;">免费领狗</span></div>
+			<ul>
+				<li><a href="" title="贵宾犬">贵宾犬</a></li>
+				<li><a href="" title="泰迪犬">泰迪犬</a></li>
+				<li><a href="" title="哈士奇">哈士奇</a></li>
+				<li><a href="" title="吉娃娃">吉娃娃</a></li>
+				<li><a href="" title="雪纳">雪纳</a></li>
+				<li><a href="" title="瑞迷你">瑞迷你</a></li>
+				<li><a href="" title="杜宾犬">杜宾犬</a></li>
+				<li><a href="" title="柯基犬">柯基犬</a></li>
+				<li><a href="" title="腊肠犬">腊肠犬</a></li>
+			</ul>
+		<div class="iflm"></div>
+</div>
+<!-- 友情链接 -->
+<div class="ifl">
+    <div class="iflt"><span style="color: #fe6813;font-weight:900;">友情链接</span></div>
+			<ul>
+				<li><a href="" title="贵宾犬">贵宾犬</a></li>
+				<li><a href="" title="泰迪犬">泰迪犬</a></li>
+				<li><a href="" title="哈士奇">哈士奇</a></li>
+				<li><a href="" title="吉娃娃">吉娃娃</a></li>
+				<li><a href="" title="雪纳">雪纳</a></li>
+				<li><a href="" title="瑞迷你">瑞迷你</a></li>
+				<li><a href="" title="杜宾犬">杜宾犬</a></li>
+				<li><a href="" title="柯基犬">柯基犬</a></li>
+				<li><a href="" title="腊肠犬">腊肠犬</a></li>
+			</ul>
+		<div class="iflm"></div>
+</div>
+  {inc: include("shop/index_footer.php");/}

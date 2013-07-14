@@ -1,0 +1,170 @@
+@CHARSET "UTF-8";
+/*----------------------------------------
+Name: details.css
+Date Created:2013/07/14 xiaoxu.wang
+Last Updated:2013/07/14 xiaoxu.wang
+----------------------------------------*/
+
+#details{
+    width:990px;
+    height:auto;
+    margin-top: 5px;
+    /*border:1px solid #ccc;*/
+}
+#details_left {
+	float: left;
+	/*border: 1px solid #CCCCCC;*/
+	width: 320px;
+	height: auto;
+        
+}
+#details_right {
+	float: right;
+/*	border: 1px solid #CCCCCC;*/
+	width: 662px;
+	height: 700px;
+	
+}
+
+#answer_center {
+/*	float: left;*/
+	border: 0px solid #CCCCCC;
+	width: 320px;
+	height: 300px;
+        overflow: hidden;
+}
+
+#news{
+    height: 270px;
+    float: left;
+    margin-top: 3px;
+    border: 1px solid gainsboro;
+}
+#news_tip{
+    width: 320px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 16px;
+    color: #F85007;
+    background: url(../images/bt.jpg);
+}
+#cat_con ul li{
+    float:left;
+    list-style:none;
+    display:inline;
+    padding-left: 15px;
+}
+#cat_con ul{
+    padding-left: 1px;
+}
+a:visited{
+    color:#000000;
+    text-decoration:none;
+}
+
+
+#cat_con a{
+    font-size: 13px;
+    text-decoration: none;
+}
+#cat_con a:hover{
+    color: red;
+}
+
+.news_ul{
+    height: 252px;
+    padding-left: 10px;
+    border-left: 1px #DDDDDD solid;
+    border-right: 1px #DDDDDD solid;
+}
+.leibei{
+    height: 252px;
+    padding-left: 10px;
+    border-left: 1px #DDDDDD solid;
+    border-right: 1px #DDDDDD solid;
+}
+.leibei li {
+  border-bottom-width:1px;
+  float:left;
+  height:27px;
+  line-height:27px;
+  width:60px;
+}
+.leibei a:hover {
+    padding: 5px;
+    color: #ffffff;
+    background: #F85007;
+}
+
+.news_ul li{
+    list-style: none;
+    line-height: 20px;
+    border-bottom:1px dashed #aaa;
+}
+.news_ul span{
+    float: right;
+    padding-right: 10px;
+    font-size: 10px;
+}
+.news_ul a{
+     font-size: 13px;
+     text-decoration: none;
+ }
+.news_ul a:hover{
+    color: red;
+}
+.answer_bm{
+    width: 320px;
+    height: 8px;
+    line-height: 8px;
+    background: url(../images/answer_bm.jpg);
+}
+
+#knowledge_tip {
+  background-image:url(../images/answer_details_header.png);
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#F85007;
+  font-size:16px;
+  height:38px;
+  line-height:38px;
+  width:662px;
+}
+ 
+#knowledge_con{
+   text-align: center;
+   font-size: 13px;
+   border-left-color:#DDDDDD;
+   border-left-style:solid;
+   border-left-width:1px;
+   border-right-color:#DDDDDD;
+   border-right-style:solid;
+   border-right-width:1px;
+   overflow:hidden;
+   padding-left:12px;
+   padding-top:3px;
+   height: 857px;
+}
+#knowledge_con_bm {
+  background-image:url(../images/answer_details_bm.png);
+  background-position:initial initial;
+  background-repeat:initial initial;
+  height:8px;
+  line-height:8px;
+  width:662px;
+}
+
+.d_1{
+    margin: 8px;
+}
+.d_1 span{
+    padding: 8px;
+}
+.dashed {border-top:1px dashed #cccccc;height: 1px;overflow:hidden;}
+
+.details_content{
+    line-height: 25px;
+    letter-spacing: 1px;
+    padding-right: 10px;
+    padding-top: 15px;
+}

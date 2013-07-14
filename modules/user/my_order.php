@@ -280,7 +280,7 @@ function merge_sub (){
 	}
 }
 
-
+<!--
 function toggle_show(obj,id) {
 	var re = /yes/i;
 	var src = obj.src;
@@ -296,4 +296,5 @@ function toggle_show(obj,id) {
 	});
 }
 
+//-->
 </script><?php } ?>

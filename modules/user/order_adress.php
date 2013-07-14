@@ -318,6 +318,7 @@ function newAddress(){
 	clearaddress();
 }
 
+<!--
 function areachanged(value,type){
 	if(value > 0) {
 		ajax("do.php?act=ajax_areas","POST","value="+value+"&type="+type,function(return_text){
@@ -467,6 +468,7 @@ function clearaddress() {
 	var address_id = document.getElementsByName('address_id')[0];
 	address_id.value="";
 }
+//-->
 </script>
 </body>
 </html><?php } ?>
